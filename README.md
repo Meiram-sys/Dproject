@@ -1,3 +1,2 @@
 # Dproject
-DI-project
-Web-site for Diana
+DI-project;Web-site for Diana
