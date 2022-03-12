@@ -1,0 +1,22 @@
+{% extends 'DiProject/base.html' %}
+{% block Content %}
+<h1>Login Page</h1>
+    <form method="post">
+    <div>
+        {{ form.non_field_errors }}
+    </div>
+    {% csrf_token %}
+    {% for login_form in form %}
+    <p>
+    <label for = '{{ login_form.id_for_label }}'>{{ login_form.label }}</label>
+    {{ login_form }}
+    </p>
+        <div>
+        {{ login_form.errors }}
+        </div>
+    {% endfor %}
+    <button type="submit">Enter</button>
+    <button type="reset">Reset</button>
+
+    </form>
+{% endblock Content %}

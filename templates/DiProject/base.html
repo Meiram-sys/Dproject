@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiProject</title>
+</head>
+<body>
+
+{% block MainMenu %}
+    <ul>
+    <li>
+        <a href="{% url 'MainPage' %}">Logo</a>
+    </li>
+    <li>
+        <a href="{% url 'Register' %}">Registration</a>
+    </li>
+    <li>
+        <a href="{% url 'Login' %}">Login</a>
+    </li>
+    </ul>
+
+{% endblock MainMenu %}
+
+{% block Content %}
+
+{% endblock Content %}
+
+</body>
+</html>

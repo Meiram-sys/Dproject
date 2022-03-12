@@ -1,0 +1,19 @@
+{% extends 'DiProject/base.html' %}
+{% block Content %}
+<h1>Registration Page</h1>
+    <form method="post">
+    {% csrf_token %}
+    {% for reg_form in form %}
+        <p>
+        <label for = '{{ reg_form.id_for_label }}'>{{ reg_form.label }} </label>
+        {{ reg_form }}
+        </p>
+        <div>
+        {{ reg_form.errors }}
+        </div>
+    {% endfor %}
+    <button type="submit">Registrate</button>
+    <button type="reset">Reset</button>
+
+    </form>
+{% endblock Content %}
