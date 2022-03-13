@@ -7,7 +7,8 @@ urlpatterns = [
     path('', MainPage.as_view(), name='MainPage'),
     path('login', LogUser.as_view(), name='Login'),
     path('register', RegUser.as_view(), name='Register'),
-    path('add-article',AddArticle.as_view(),name='AddArticle')
+    path('add-article',AddArticle.as_view(),name='AddArticle'),
+    path('show-category/<int:idea_id>',ShowCategory,name='ShowCategory')
 ]
 
 

@@ -33,7 +33,6 @@ class MainPage(ListView):
     template_name = 'Philosophy/MainPage.html'
     context_object_name = 'philosophers'
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Главная страница'
@@ -45,11 +44,22 @@ class AddArticle(CreateView):
     template_name = 'Philosophy/AddArticle.html'
     success_url = reverse_lazy('MainPage')
 
-
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавить статью'
         return context
+
+
+def ShowCategory(request,idea_id):
+    philosopher = philosophers.objects.filter(idea_id=idea_id)
+    ideas = philosophy_ideas.objects.all()
+    context = {
+        'philosophers':philosopher,
+        'ideas_phil': ideas,
+        'title':'Idea',
+        'idea_selected': 0,
+    }
+    return render(request, 'Philosophy/MainPage.html', context=context)
 
 
 def PageNotFoundHandler(request, exception):
