@@ -1,2 +1,3 @@
 # Dproject
-DI-project
+Philisophy web-site
+
