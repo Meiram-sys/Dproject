@@ -1,14 +1,15 @@
 {% extends 'Philosophy/base.html' %}
 {% block Content %}
-    <div class="container">
             {% for philopsher in philosophers %}
-                <ul>
-                <li>Философ:{{ philopsher.name }} {{ philopsher.surname }}</li>
-                <li>Идея:{{ philopsher.philosophy_name }}</li>
-                <li>{{ philopsher.philosophy }}</li>
-                <Li>Период-жизни:{{ philopsher.birth_time }} - {{ philopsher.death_time }}</Li>
-                </ul>
+                 <div class="container">
+                        <p > Философ:  {{ philopsher.name }} {{ philopsher.surname }} </p>
+                        <p > Идея:  {{ philopsher.philosophy_name }} </p>
+                        <br>
+                        <p>{{ philopsher.philosophy }}</p>
+                        <br>
+                        <p>Период жизни:{{ philopsher.birth_time }} - {{ philopsher.death_time }}</p>
+                 </div>
             {% endfor %}
-    </div>
+
 
 {% endblock Content %}

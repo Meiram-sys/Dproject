@@ -11,3 +11,5 @@ class philosophers(models.Model):
 
     def __str__(self):
         return self.philosophy_name
+
+class philosophyidea(models.Model):
