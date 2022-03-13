@@ -13,7 +13,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DiProject.apps.DiprojectConfig'
+    'Philosophy.apps.DiprojectConfig'
 ]
 
 MIDDLEWARE = [

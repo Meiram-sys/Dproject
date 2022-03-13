@@ -19,3 +19,12 @@ class RegisterUser(UserCreationForm):
 class LoginUser(AuthenticationForm):
     username = forms.CharField(label='Login', widget=forms.TextInput)
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
+
+
+class AddArticle(forms.ModelForm):
+    class Meta:
+        model = philosophers
+        fields = ['name', 'surname', 'philosophy_name', 'philosophy', 'birth_time', 'death_time']
+        widgets = {
+            'philosophy': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
+        }
