@@ -50,7 +50,9 @@ class SearchResultsView(ListView):
         result = philosophers.objects.filter(
             Q(name__icontains=query) | Q(surname__icontains=query) | Q(philosophy_name__icontains=query) | Q(
                 philosophy__icontains=query))
-        return result
+        if not query:
+
+            return result
 
 
 class MainPage(ListView):

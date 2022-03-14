@@ -17,8 +17,9 @@ class RegisterUser(UserCreationForm):
 
 
 class LoginUser(AuthenticationForm):
-    username = forms.CharField(label='Login', widget=forms.TextInput)
-    password = forms.CharField(label='Password', widget=forms.PasswordInput)
+    username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class':'username','placeholder':'Логин'}))
+    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':'password','placeholder':'Пароль'}))
+
 
 
 class AddArticle(forms.ModelForm):

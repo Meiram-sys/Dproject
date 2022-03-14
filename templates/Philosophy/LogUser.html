@@ -1,22 +1,17 @@
 {% extends 'Philosophy/base.html' %}
 {% block Content %}
-<h1>Login Page</h1>
-    <form method="post">
+    <form method="post" class="main-login">
     <div>
         {{ form.non_field_errors }}
     </div>
     {% csrf_token %}
     {% for login_form in form %}
-    <p>
-    <label for = '{{ login_form.id_for_label }}'>{{ login_form.label }}</label>
-    {{ login_form }}
-    </p>
+    <p class="log-form">{{ login_form }}</p>
         <div>
         {{ login_form.errors }}
         </div>
     {% endfor %}
-    <button type="submit">Enter</button>
-    <button type="reset">Reset</button>
-
+    <button type="submit" class="button-log">Вход</button>
+    <button type="reset" class="button-log">Сбросить</button>
     </form>
 {% endblock Content %}
