@@ -1,6 +1,6 @@
 {% extends 'Philosophy/base.html' %}
 {% block Content %}
-            {% for philopsher in philosophers %}
+            {% for philopsher in philosophy %}
                  <div class="container">
                         <p > Философ:  {{ philopsher.name }} {{ philopsher.surname }} </p>
                         <p > Идея:  {{ philopsher.philosophy_name }} </p>
@@ -10,21 +10,7 @@
                         <p>Период жизни:{{ philopsher.birth_time }} - {{ philopsher.death_time }}</p>
                  </div>
             {% endfor %}
+
+
 {% endblock Content %}
 
-{% block Idea %}
-    <div class="container-idea">
-            {% if idea_selected == 0 %}
-                <p><a> Виды Философий</a></p>
-            {% endif %}
-            {% for idea in ideas_phil %}
-                {% if idea.pk == idea_selected %}
-                    <li>
-                        <p>{{ idea.philosophy_idea_name }}</p>
-                    </li>
-                {% else %}
-                    <a href="{{ idea.get_absolute_url }}">{{ idea.philosophy_idea_name }}</a>
-                {% endif %}
-            {% endfor  %}
-    </div>
-{% endblock Idea %}

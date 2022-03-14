@@ -58,6 +58,10 @@ nav{
 }
 .container-idea{
     background: orange;
+    margin-left: 0;
+    position: absolute;
+    left: 0;
+    top:80px;
 }
 
 

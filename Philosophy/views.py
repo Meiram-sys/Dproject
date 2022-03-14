@@ -31,7 +31,7 @@ class LogUser(LoginView):
 class MainPage(ListView):
     model = philosophers
     template_name = 'Philosophy/MainPage.html'
-    context_object_name = 'philosophers'
+    context_object_name = 'philosophy'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -50,16 +50,7 @@ class AddArticle(CreateView):
         return context
 
 
-def ShowCategory(request,idea_id):
-    philosopher = philosophers.objects.filter(idea_id=idea_id)
-    ideas = philosophy_ideas.objects.all()
-    context = {
-        'philosophers':philosopher,
-        'ideas_phil': ideas,
-        'title':'Idea',
-        'idea_selected': 0,
-    }
-    return render(request, 'Philosophy/MainPage.html', context=context)
+
 
 
 def PageNotFoundHandler(request, exception):
