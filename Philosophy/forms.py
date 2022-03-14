@@ -28,3 +28,7 @@ class AddArticle(forms.ModelForm):
         widgets = {
             'philosophy': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
         }
+
+
+class SearchForm(forms.Form):
+    query = forms.CharField()

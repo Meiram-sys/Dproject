@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 from django.contrib.auth.views import LoginView
@@ -48,6 +49,17 @@ class AddArticle(CreateView):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Добавить статью'
         return context
+
+
+class SearchResultsView(ListView):
+    model = philosophers
+    template_name = 'Philosophy/MainPage.html'
+    context_object_name = 'philosophy'
+
+    def get_queryset(self):
+        query = self.request.GET.get('search_q')
+        result = philosophers.objects.filter(Q(name__icontains=query) | Q(surname__icontains=query) | Q(philosophy_name__icontains=query) |Q(philosophy__icontains=query) )
+        return result
 
 
 

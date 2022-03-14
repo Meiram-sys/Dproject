@@ -8,6 +8,7 @@ urlpatterns = [
     path('login', LogUser.as_view(), name='Login'),
     path('register', RegUser.as_view(), name='Register'),
     path('add-article',AddArticle.as_view(),name='AddArticle'),
+    path('search-resutl',SearchResultsView.as_view(),name='search_results')
 
 ]
 

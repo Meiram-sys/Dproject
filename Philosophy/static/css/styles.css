@@ -24,6 +24,26 @@ nav{
     padding-left: 10%;
     z-index: 1;
 }
+
+.search{
+    font-size: 15px;
+    width: 150px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.search_button{
+    color:black;
+    font-size: 14px;
+    background-color: white;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+}
+.search_button:hover{
+    background-color: red;
+    color:white;
+}
 .nav-links{
     text-align: right;
     background: red;
@@ -38,16 +58,16 @@ nav{
 .nav-links ul li a{
     color:white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 17px;
 }
 .nav-links ul li a:hover{
     color:black;
 }
 
 .container{
-    margin-left: 300px ;
-    margin-right: 50px;
-    margin-top:3px ;
+    margin-left: 30px ;
+    margin-right: 100px;
+    margin-top:15px ;
     padding: 35px;
     border-left: 7px solid indianred;
     border-bottom: 4px solid black;
@@ -56,12 +76,6 @@ nav{
     font-weight: normal;
     font-size: 18px;
 }
-.container-idea{
-    background: orange;
-    margin-left: 0;
-    position: absolute;
-    left: 0;
-    top:80px;
-}
+
 
 

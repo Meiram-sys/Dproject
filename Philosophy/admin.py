@@ -8,6 +8,4 @@ class PhilosophyModel(admin.ModelAdmin):
         name = philosophers
 
 
-
 admin.site.register(philosophers, PhilosophyModel)
-

@@ -16,7 +16,12 @@
                     <ul>
                         <li ><a href="{% url 'Register' %}" >Логин</a></li>
                         <li ><a href="{% url 'Login' %}" >Регистрация</a></li>
+                        <li ><a href="{% url 'AddArticle' %}" >Добавить статью</a></li>
                     </ul>
+                <form action="{% url 'search_results' %}" method="get" >
+                  <input name="search_q" type="text" placeholder="Поиск..." class = 'search'>
+                    <button type="submit" class = 'search_button'>Поиск</button>
+                </form>
             </div>
         </nav>
 
