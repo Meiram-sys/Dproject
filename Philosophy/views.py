@@ -29,17 +29,6 @@ class LogUser(LoginView):
         return context
 
 
-class MainPage(ListView):
-    model = philosophers
-    template_name = 'Philosophy/MainPage.html'
-    context_object_name = 'philosophy'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['title'] = 'Главная страница'
-        return context
-
-
 class AddArticle(CreateView):
     form_class = AddArticle
     template_name = 'Philosophy/AddArticle.html'
@@ -58,11 +47,43 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('search_q')
-        result = philosophers.objects.filter(Q(name__icontains=query) | Q(surname__icontains=query) | Q(philosophy_name__icontains=query) |Q(philosophy__icontains=query) )
+        result = philosophers.objects.filter(
+            Q(name__icontains=query) | Q(surname__icontains=query) | Q(philosophy_name__icontains=query) | Q(
+                philosophy__icontains=query))
         return result
 
 
+class MainPage(ListView):
+    model = philosophers
+    template_name = 'Philosophy/MainPage.html'
+    context_object_name = 'philosophy'
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная страница'
+        return context
+
+
+class IndividualsAbout(ListView):
+    model = Individuals
+    template_name = 'Philosophy/Individuals.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Личности'
+        return context
+
+
+def show_category(request, category_id):
+    posts = philosophers.objects.filter(category_id)
+    cat = category.objects.all()
+    context = {
+        'posts': posts,
+        'cat': cat,
+        'title': 'Main page',
+        'cat_selected': 0,
+    }
+    return render(request, 'Philosophy/MainPage.html', context=context)
 
 
 def PageNotFoundHandler(request, exception):

@@ -1,0 +1,16 @@
+{% extends 'Philosophy/base.html' %}
+{% block Content %}
+            {% for individ in object_list%}
+                <div class = 'image-container'>
+                     <img src="{{individ.photo.url}} " alt="Individual" class="image-individ">
+                 </div>
+                 <div class="container">
+                        <p>{{ individ.name }} {{ individ.surname }}</p>
+                        <p>{{ individ.birth_time }} - {{ individ.death_time }}</p>
+                        <p>{{ individ.biography }}</p>
+                 </div>
+            {% endfor %}
+
+
+
+{% endblock Content %}

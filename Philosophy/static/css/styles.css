@@ -65,9 +65,10 @@ nav{
 }
 
 .container{
-    margin-left: 30px ;
+    display: block;
+    top:10px;
+    margin-left: 300px ;
     margin-right: 100px;
-    margin-top:15px ;
     padding: 35px;
     border-left: 7px solid indianred;
     border-bottom: 4px solid black;
@@ -77,5 +78,14 @@ nav{
     font-size: 18px;
 }
 
+.image-container{
+    position: relative;
+    top:200px;
+    left: 50px;
+}
+.image-individ{
+    height: 300px;
+    width: 200px;
+}
 
 

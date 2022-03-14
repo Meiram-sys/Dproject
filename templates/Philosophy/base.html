@@ -16,6 +16,7 @@
                     <ul>
                         <li ><a href="{% url 'Register' %}" >Логин</a></li>
                         <li ><a href="{% url 'Login' %}" >Регистрация</a></li>
+                        <li ><a href="{% url 'individuals' %}" >Личности</a></li>
                         <li ><a href="{% url 'AddArticle' %}" >Добавить статью</a></li>
                     </ul>
                 <form action="{% url 'search_results' %}" method="get" >
@@ -30,6 +31,7 @@
 
 
 {% block Content %}
+
 {% endblock Content %}
 
 
