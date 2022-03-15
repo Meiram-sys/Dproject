@@ -1,5 +1,15 @@
 {% extends 'Philosophy/base.html' %}
+
+
 {% block Content %}
+    <div class="MainPage">
+            <div class="search_block">
+                <form action="{% url 'search_results' %}" method="get" >
+                  <input name="search_q" type="text" placeholder="Поиск..." class = 'search'>
+                    <button type="submit" class = 'search_button'>Поиск</button>
+                </form>
+            </div>
+        <div class="MainPageInfo_block">
             {% for philopsher in philosophy %}
                  <div class="container">
                         <p > Философ:  {{ philopsher.name }} {{ philopsher.surname }} </p>
@@ -10,8 +20,12 @@
                         <p>Период жизни:{{ philopsher.birth_time }} - {{ philopsher.death_time }}</p>
                  </div>
             {% endfor %}
+        </div>
+
+    </div>
 
 
 
 {% endblock Content %}
+
 

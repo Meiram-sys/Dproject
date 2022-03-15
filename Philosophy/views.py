@@ -1,6 +1,7 @@
+from django.contrib.auth import login, logout
 from django.db.models import Q
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
@@ -17,17 +18,26 @@ class RegUser(CreateView):
         context['title'] = 'Регистрация'
         return context
 
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('MainPage')
+
 
 class LogUser(LoginView):
     form_class = LoginUser
     template_name = 'Philosophy/LogUser.html'
     success_url = reverse_lazy('MainPage')
+    login_url = reverse_lazy('login')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Вход'
         return context
 
+def UserLogout(request):
+    logout(request)
+    return redirect('MainPage')
 
 class AddArticle(CreateView):
     form_class = AddArticle
@@ -50,9 +60,7 @@ class SearchResultsView(ListView):
         result = philosophers.objects.filter(
             Q(name__icontains=query) | Q(surname__icontains=query) | Q(philosophy_name__icontains=query) | Q(
                 philosophy__icontains=query))
-        if not query:
-
-            return result
+        return result
 
 
 class MainPage(ListView):

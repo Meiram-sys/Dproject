@@ -14,15 +14,16 @@
             <a href="{% url 'MainPage' %}" class = 'logo' >Sarca</a>
             <div class="nav-links">
                     <ul>
+                        {% if request.user.is_authenticated %}
+                            <li ><a href="{% url 'AddArticle' %}" >Добавить статью</a></li>
+                            <a href="#" class="Username_Loged" >{{ user.username }}</a>
+                             <li ><a href="{% url 'logout' %}" >Выйти</a></li>
+                        {% else %}
                         <li ><a href="{% url 'Register' %}" >Регистрация</a></li>
                         <li ><a href="{% url 'Login' %}" >Вход</a></li>
                         <li ><a href="{% url 'individuals' %}" >Личности</a></li>
-                        <li ><a href="{% url 'AddArticle' %}" >Добавить статью</a></li>
+                        {% endif %}
                     </ul>
-                <form action="{% url 'search_results' %}" method="get" >
-                  <input name="search_q" type="text" placeholder="Поиск..." class = 'search'>
-                    <button type="submit" class = 'search_button'>Поиск</button>
-                </form>
             </div>
         </nav>
 

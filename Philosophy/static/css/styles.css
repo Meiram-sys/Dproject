@@ -25,25 +25,7 @@ nav{
     z-index: 1;
 }
 
-.search{
-    font-size: 15px;
-    width: 150px;
-    height: 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-.search_button{
-    color:black;
-    font-size: 14px;
-    background-color: white;
-    height: 35px;
-    width: 100px;
-    border-radius: 5px;
-}
-.search_button:hover{
-    background-color: red;
-    color:white;
-}
+
 .button-log{
     color:black;
     font-size: 18px;
@@ -51,8 +33,8 @@ nav{
     height: 45px;
     width: 120px;
     border-radius: 5px;
-    margin-left: 35px;
     margin-top:15px;
+    margin-left: 35%;
 }
 .button-log:hover{
     background-color: red;
@@ -97,9 +79,18 @@ nav{
     font-weight: normal;
     font-size: 18px;
 }
+.MainPage{
+    display: grid;
+    grid-template-areas: 300px  1fr;
+
+}
+.MainPageInfo_block{
+    display: grid;
+    grid-column-start:2;
+    grid-column-end: 3;
+}
 .container{
-    margin-left: 300px;
-    margin-right: 100px;
+    margin-right: 50px;
     margin-top:15px ;
     padding: 40px;
     border-left: 7px solid indianred;
@@ -108,7 +99,34 @@ nav{
     line-height: 26px;
     font-weight: normal;
     font-size: 18px;
+}
+.search_block{
+    display: grid;
+    grid-column-start: 0;
+    grid-column-end: 1;
+    margin-top:50px;
+    margin-left: 10px;
+    padding: 10px;
 
+}
+.search{
+    font-size: 15px;
+    width: 150px;
+    height: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.search_button{
+    color:black;
+    font-size: 14px;
+    background-color: white;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+}
+.search_button:hover{
+    background-color: red;
+    color:white;
 }
 .image-container{
     grid-column-start: 0;
@@ -138,8 +156,82 @@ nav{
     padding: 5px;
 }
 .main-login{
-    margin-left: 30%;
+    display: grid;
+    justify-content: center;
 }
+.RegPage{
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
+.email{
+    font-size: 20px;
+    width: 400px;
+    height: 50px;
+}
+.AddArticle{
+    display: grid;
+    justify-content: center;
+}
+.name{
+    font-size: 14px;
+    width: 400px;
+    height: 40px;
 
+}
+.surname{
+    font-size: 14px;
+    width: 300px;
+    height: 50px;
 
+}
+.philosophy_name{
+    font-size: 14px;
+    width: 300px;
+    height: 40px;
 
+}
+.philosophy{
+    font-size: 12px;
+    width: 500px;
+    height: 150px;
+
+}
+.birth_time{
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+
+}
+.death_time{
+    font-size: 14px;
+    width: 100px;
+    height: 40px;
+}
+.button_add{
+    margin-top: 10px;
+    color:black;
+    font-size: 20px;
+    background-color: white;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+
+}
+.button_add:hover{
+    background-color: red;
+    color:white;
+}
+.ArticleField{
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+}
+.Username_Loged{
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+    color:orange;
+    border-right: 3px solid black;
+    padding: 15px;
+}

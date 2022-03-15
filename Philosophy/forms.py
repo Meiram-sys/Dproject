@@ -6,10 +6,14 @@ from .models import *
 
 
 class RegisterUser(UserCreationForm):
-    username = forms.CharField(label='Login')
-    email = forms.EmailField(label='Email')
-    password1 = forms.CharField(label='Password')
-    password2 = forms.CharField(label='Repeat password')
+    username = forms.CharField(label='Login',
+                               widget=forms.TextInput(attrs={'class': 'username', 'placeholder': 'Логин'}))
+    email = forms.EmailField(label='Email',
+                             widget=forms.TextInput(attrs={'class': 'email', 'placeholder': 'Ваш Емайл'}))
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput(attrs={'class': 'password', 'placeholder': 'Ваш пароль'}))
+    password2 = forms.CharField(label='Repeat password', widget=forms.PasswordInput(
+        attrs={'class': 'password', 'placeholder': 'Повторите пароль'}))
 
     class Meta:
         model = User
@@ -17,9 +21,10 @@ class RegisterUser(UserCreationForm):
 
 
 class LoginUser(AuthenticationForm):
-    username = forms.CharField(label='Login', widget=forms.TextInput(attrs={'class':'username','placeholder':'Логин'}))
-    password = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':'password','placeholder':'Пароль'}))
-
+    username = forms.CharField(label='Login',
+                               widget=forms.TextInput(attrs={'class': 'username', 'placeholder': 'Логин'}))
+    password = forms.CharField(label='Password',
+                               widget=forms.PasswordInput(attrs={'class': 'password', 'placeholder': 'Пароль'}))
 
 
 class AddArticle(forms.ModelForm):
@@ -27,7 +32,13 @@ class AddArticle(forms.ModelForm):
         model = philosophers
         fields = ['name', 'surname', 'philosophy_name', 'philosophy', 'birth_time', 'death_time']
         widgets = {
-            'philosophy': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
+            'name': forms.TextInput(attrs={'class': 'name'}),
+            'surname': forms.TextInput(attrs={'class': 'surname'}),
+            'philosophy_name': forms.TextInput(attrs={'class': 'philosophy_name'}),
+            'philosophy': forms.Textarea(attrs={'cols': 80, 'rows': 10, 'class': 'philosophy'}),
+            'birth_time': forms.TextInput(attrs={'class': 'birth_time'}),
+            'death_time': forms.TextInput(attrs={'class': 'death_time'})
+
         }
 
 

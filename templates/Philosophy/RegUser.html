@@ -1,19 +1,15 @@
 {% extends 'Philosophy/base.html' %}
 {% block Content %}
-<h1>Registration Page</h1>
-    <form method="post">
+    <form method="post" class="RegPage">
     {% csrf_token %}
     {% for reg_form in form %}
-        <p>
-        <label for = '{{ reg_form.id_for_label }}'>{{ reg_form.label }} </label>
-        {{ reg_form }}
-        </p>
+        <p>{{ reg_form }}</p>
         <div>
         {{ reg_form.errors }}
         </div>
     {% endfor %}
-    <button type="submit">Registrate</button>
-    <button type="reset">Reset</button>
+    <button type="submit" class="button-log">Зарегистрироваться</button>
+    <button type="reset" class="button-log">Сбросить</button>
 
     </form>
 {% endblock Content %}

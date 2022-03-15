@@ -1,13 +1,14 @@
 {% extends 'Philosophy/base.html' %}
 {% block Content %}
-    <form method="post" action="{% url 'AddArticle' %}">
+    <form method="post" action="{% url 'AddArticle' %}" class="AddArticle">
                 {% csrf_token %}
                 <div>{{ form.non_field_errors }}</div>
                     {% for f in form %}
-                        <p><label for = "{{ f.id_for_label }}" > {{ f.label }} </label>{{f}}</p>
+                        <p class="ArticleField"><label for = "{{ f.id_for_label }}" > {{ f.label }} </label>{{f}}</p>
                 <div>{{ f.errors }}</div>
                     {% endfor %}
-                    <button type="submit">Add</button>
+                    <button type="submit" class="button_add">Добавить</button>
+                    <button type="reset" class="button_add">Сбросить</button>
     </form>
 
 {% endblock Content %}
