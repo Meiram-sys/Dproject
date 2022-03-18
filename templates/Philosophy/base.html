@@ -16,6 +16,7 @@
                     <ul>
                         {% if request.user.is_authenticated %}
                             <li ><a href="{% url 'AddArticle' %}" >Добавить статью</a></li>
+                            <li ><a href="{% url 'individuals' %}" >Личности</a></li>
                             <a href="#" class="Username_Loged" >{{ user.username }}</a>
                              <li ><a href="{% url 'logout' %}" >Выйти</a></li>
                         {% else %}
@@ -34,6 +35,8 @@
 {% block Content %}
 
 {% endblock Content %}
+{% block Category %}
+{% endblock %}
 
 
 

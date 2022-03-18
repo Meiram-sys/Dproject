@@ -11,7 +11,8 @@ urlpatterns = [
     path('add-article', AddArticle.as_view(), name='AddArticle'),
     path('search-resutl', SearchResultsView.as_view(), name='search_results'),
     path('logout',UserLogout,name='logout'),
-    path('individuals', IndividualsAbout.as_view(), name='individuals'),
-    path('category/<int:category_id>',show_category,name='category')
+    path('category/<int:category_id>', show_category, name='category'),
+    path('individuals/', IndividualsAbout.as_view(), name='individuals'),
+
 
 ]

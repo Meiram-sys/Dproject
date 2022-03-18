@@ -62,14 +62,14 @@ nav{
 }
 .individ-block{
     display: grid;
-    grid-template-areas: 200px 1fr;
+    grid-template-areas: 200px 1fr 300px;
     grid-column-gap: 20px;
 }
 .container-individ{
     grid-column-start: 1;
     grid-column-end:2;
     margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 200px;
     margin-top:15px ;
     padding: 40px;
     border-left: 7px solid indianred;
@@ -135,9 +135,22 @@ nav{
     margin-top:100px
 }
 .individ-photo{
-    width: 300px;
-    height: 400px;
+    width: 200px;
+    height: 300px;
     border-radius: 10px;
+}
+.individ-category{
+    position:absolute;
+    right: 0;
+    top:80px;
+    margin-right: 5px;
+    font-style: italic;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: 16px;
+}
+.individ-category li a{
+    text-decoration: none;
 }
 .username{
     font-size: 20px;
@@ -235,3 +248,4 @@ nav{
     border-right: 3px solid black;
     padding: 15px;
 }
+

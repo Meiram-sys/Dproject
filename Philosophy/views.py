@@ -77,23 +77,25 @@ class MainPage(ListView):
 class IndividualsAbout(ListView):
     model = Individuals
     template_name = 'Philosophy/Individuals.html'
+    context_object_name = 'posts'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Личности'
+        context['cat'] = category.objects.all()
         return context
 
 
 def show_category(request, category_id):
-    posts = philosophers.objects.filter(category_id)
+    posts = Individuals.objects.filter(category_id=category_id)
     cat = category.objects.all()
     context = {
         'posts': posts,
         'cat': cat,
-        'title': 'Main page',
+        'title': 'Category',
         'cat_selected': 0,
     }
-    return render(request, 'Philosophy/MainPage.html', context=context)
+    return render(request, 'Philosophy/Individuals.html', context=context)
 
 
 def PageNotFoundHandler(request, exception):
